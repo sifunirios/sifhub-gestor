@@ -1,6 +1,6 @@
 {
     "schemaVersion": 2,
-    "dockerFileLines": [
+    "dockerfileLines": [
         "FROM python:3.9.6-alpine",
         "RUN apk update && apk upgrade && apk add --no-cache make g++ bash git openssh mysql-server libmysqlclient-dev curl",
         "RUN mkdir -p /usr/src/app",
