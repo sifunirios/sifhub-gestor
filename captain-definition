@@ -2,7 +2,7 @@
     "schemaVersion": 2,
     "dockerfileLines": [
         "FROM python:3.9.6-alpine",
-        "RUN apk update && apk upgrade && apk add --no-cache make g++ bash git openssh py3-pillow mariadb mariadb-client mariadb-connector-c curl",
+        "RUN apk update && apk upgrade && apk add --no-cache make g++ bash git openssh py3-pillow mariadb mariadb-dev mariadb-client mariadb-connector-c curl",
         "RUN mkdir -p /usr/src/app",
         "WORKDIR /usr/src/app",
         "COPY . /usr/src/app",
