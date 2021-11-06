@@ -1,0 +1,14 @@
+{
+    "schemaVersion": 2,
+    "dockerFileLines": [
+        "FROM python:3.9.6-alpine",
+        "RUN apk update && apk upgrade && apk add --no-cache make g++ bash git openssh mysql-server libmysqlclient-dev curl",
+        "RUN mkdir -p /usr/src/app",
+        "WORKDIR /usr/src/app",
+        "COPY . /usr/src/app",
+        "RUN pip install -r requirements/production.txt",
+        "ENV DJANGO_SETTINGS_MODULE project.settings.production",
+        "EXPOSE 80",
+        "CMD sh /usr/src/app/run.sh"
+    ]
+}

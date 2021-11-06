@@ -1,0 +1,19 @@
+{% load i18n admin_urls %}
+{% block object-tools-items %}
+<li>
+    {% if has_project %}
+        <a href="{% url 'admin:services_project_change' project.pk %}" class="projectlink">Abrir projeto</a>
+    {% else %}
+        <form action="/gestor/services/request/create-project/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="request" value="{{ original.pk }}">
+            <button type="submit" class="projectlink">Criar novo projeto</button>
+        </form>
+    {% endif %}
+</li>
+<li>
+    {% url opts|admin_urlname:'history' original.pk|admin_urlquote as history_url %}
+    <a href="{% add_preserved_filters history_url %}" class="historylink">{% translate "History" %}</a>
+</li>
+{% if has_absolute_url %}<li><a href="{{ absolute_url }}" class="viewsitelink">{% translate "View on site" %}</a></li>{% endif %}
+{% endblock %}

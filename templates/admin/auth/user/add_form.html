@@ -1,0 +1,18 @@
+{% extends "admin/change_form.html" %}
+{% load i18n %}
+
+{% block form_top %}
+  {% if not is_popup %}
+    <p>Primeiro, informe os dados básicos. Então, você poderá editar outras opções do usuário.</p>
+  {% else %}
+    <p>Digite as informações básicas.</p>
+  {% endif %}
+{% endblock %}
+
+{% block submit_buttons_bottom %}
+  <div class="submit-row">
+    {% block submit-row %}
+      <input type="submit" value="Próximo" class="default" name="_save">
+    {% endblock %}
+  </div>
+{% endblock %}
