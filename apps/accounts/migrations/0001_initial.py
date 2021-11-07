@@ -26,7 +26,6 @@ class Migration(migrations.Migration):
                 ('email', models.EmailField(max_length=254, unique=True, verbose_name='endereço de email')),
                 ('name', models.CharField(max_length=50, verbose_name='nome')),
                 ('surname', models.CharField(max_length=50, verbose_name='sobrenome')),
-                ('photo', models.ImageField(blank=True, help_text='É preferível que a proporção da foto seja de 1:1 (quadrada).', upload_to='imagens/usuarios', verbose_name='foto')),
                 ('is_active', models.BooleanField(default=True, help_text='Indica que o usuário será tratado como ativo. Ao invés de excluir o usuário, desmarque isso.', verbose_name='ativo')),
                 ('is_staff', models.BooleanField(default=False, help_text='Indica que usuário consegue acessar este site de administração.', verbose_name='membro da equipe')),
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='data de registro')),

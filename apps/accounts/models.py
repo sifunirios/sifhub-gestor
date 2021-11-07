@@ -13,12 +13,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField('endereço de email', unique=True)
     name = models.CharField('nome', max_length=50)
     surname = models.CharField('sobrenome', max_length=50)
-    photo = models.ImageField(
-        'foto',
-        upload_to='imagens/usuarios',
-        blank=True,
-        help_text='É preferível que a proporção da foto seja de 1:1 (quadrada).'
-    )
     is_active = models.BooleanField(
         'ativo',
         default=True,
